@@ -1,0 +1,2 @@
+stm32f7_disco-adc.ads:40:59: "Output_Type" is not a component of the aggregate subtype
+stm32f7_disco-adc.ads:41:59: "Speed" is not a component of the aggregate subtype

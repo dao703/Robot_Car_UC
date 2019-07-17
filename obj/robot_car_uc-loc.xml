@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<Locations >
+  <Project>
+    <vfs_file />
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>/home/daniel/Documentos/Robot_Car_UC/ada-enet/Ada_Drivers_Library/examples/shared/common/common.gpr</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 5" >
+      <vfs_project />
+      <vfs_file>/home/daniel/Documentos/Robot_Car_UC/ada-enet/Ada_Drivers_Library/examples/shared/common/common.gpr</vfs_file>
+    </file_marker>
+    <file_marker column=" 9" line=" 1" >
+      <vfs_project />
+      <vfs_file>/home/daniel/Documentos/Robot_Car_UC/ada-enet/Ada_Drivers_Library/examples/shared/common/common.gpr</vfs_file>
+    </file_marker>
+    <file_marker column=" 6" line=" 36" >
+      <vfs_project />
+      <vfs_file>/home/daniel/Documentos/Robot_Car_UC/ada-enet/Ada_Drivers_Library/examples/shared/common/lch_sfp/led/last_chance_handler.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>/home/daniel/Documentos/Robot_Car_UC/src/onbooard_system.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 5" line=" 6" >
+      <vfs_project />
+      <vfs_file>/home/daniel/Documentos/Robot_Car_UC/src/onbooard_system.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>/home/daniel/Documentos/Robot_Car_UC/src/onboard_system_package.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 5" line=" 25" >
+      <vfs_project />
+      <vfs_file>/home/daniel/Documentos/Robot_Car_UC/src/onboard_system_package.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 7" line=" 1" >
+      <vfs_project />
+      <vfs_file>/home/daniel/Documentos/Robot_Car_UC/src/onboard_system_package.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 59" line=" 40" >
+      <vfs_project />
+      <vfs_file>/home/daniel/Documentos/Robot_Car_UC/Drivers_UC/stm32f7_disco-adc.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 31" line=" 39" >
+      <vfs_project />
+      <vfs_file>/home/daniel/Documentos/Robot_Car_UC/Drivers_UC/stm32f7_disco-adc.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>/home/daniel/Documentos/Robot_Car_UC/ada-enet/Ada_Drivers_Library/arch/ARM/STM32/drivers/stm32-dac.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>/home/daniel/Documentos/Robot_Car_UC/ada-enet/Ada_Drivers_Library/arch/ARM/STM32/drivers/stm32-dac.ads</vfs_file>
+    </file_marker>
+    <file_marker current="true" column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>/home/daniel/Documentos/Robot_Car_UC/ada-enet/Ada_Drivers_Library/arch/ARM/STM32/drivers/stm32-gpio.ads</vfs_file>
+    </file_marker>
+  </Project>
+</Locations>

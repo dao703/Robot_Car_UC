@@ -1,0 +1,103 @@
+with "ada-enet/Ada_Drivers_Library/examples/shared/common/common.gpr";
+with "ada-enet/Ada_Drivers_Library/boards/stm32f769_discovery/stm32f769_discovery_sfp.gpr";
+with "ada-enet/anet_stm32fxxx.gpr";
+
+project Robot_Car_Uc is
+
+   type Loader_Type is
+      ("RAM", "ROM");
+   type Rts_Type is
+      ("ravenscar-sfp", "ravenscar-full");
+   type Lch_Type is
+      ("led", "lcd");
+   type Build_Type is
+      ("Debug", "Production");
+   type Build_Checks_Type is
+      ("Disabled", "Enabled");
+   for Object_Dir use "obj";
+   ADL_BUILD_CHECKS : Build_Checks_Type := external ("ADL_BUILD_CHECKS");
+   ADL_BUILD : Build_Type := external ("ADL_BUILD");
+   LCH : Lch_Type := external ("LCH");
+   RTS_Profile : Rts_Type := external ("RTS_Profile");
+   LOADER : Loader_Type := external ("LOADER");
+
+   package Ide is
+      for Connection_Tool use "openocd";
+      for Connection_Config_File use "../../../../usr/share/openocd/scripts/board/stm32f7discovery.cfg";
+      for Program_Host use "localhost:4242";
+      for Communication_Protocol use "remote";
+
+      case ADL_BUILD_CHECKS is
+
+         when "Disabled" =>
+
+            case ADL_BUILD is
+
+               when "Debug" =>
+
+               when "Production" =>
+                  for Compiler_Command ("ada") use "gnatmake";
+            end case;
+
+         when "Enabled" =>
+            for Compiler_Command ("ada") use "gnatmake";
+      end case;
+   end Ide;
+
+   case ADL_BUILD_CHECKS is
+
+      when "Disabled" =>
+
+         case ADL_BUILD is
+
+            when "Debug" =>
+
+               case LCH is
+
+                  when "led" =>
+
+                     case RTS_Profile is
+
+                        when "ravenscar-sfp" =>
+
+                           case LOADER is
+
+                              when "RAM" =>
+                                 for Source_Dirs use ("src");
+                                 for Main use ("main.adb");
+                                 for Target use "arm-eabi";
+                                 for Runtime ("ada") use "ravenscar-sfp-stm32f769disco";
+
+                              when "ROM" =>
+                                 for Source_Dirs use ("src", "Drivers_UC", "Examples_UC");
+                                 for Main use ("onbooard_system.adb", "remote_control_car.adb");
+                                 for Target use "arm-eabi";
+                                 for Runtime ("ada") use "ravenscar-sfp-stm32f769disco";
+                           end case;
+
+                        when "ravenscar-full" =>
+                           for Source_Dirs use ("src");
+                           for Main use ("main.adb");
+                           for Target use "arm-eabi";
+                           for Runtime ("ada") use "ravenscar-sfp-stm32f769disco";
+                     end case;
+
+                  when "lcd" =>
+                     for Source_Dirs use ("src");
+                     for Main use ("main.adb");
+                     for Target use "arm-eabi";
+                     for Runtime ("ada") use "ravenscar-sfp-stm32f769disco";
+               end case;
+
+            when "Production" =>
+               for Source_Dirs use ("src");
+               for Main use ("main.adb");
+         end case;
+
+      when "Enabled" =>
+         for Source_Dirs use ("src");
+         for Main use ("main.adb");
+   end case;
+
+end Robot_Car_Uc;
+
