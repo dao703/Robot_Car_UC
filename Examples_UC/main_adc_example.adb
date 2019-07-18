@@ -17,7 +17,7 @@ with HAL;
 
 procedure Main_ADC_Example is
    BG : constant Bitmap_Color := (Alpha => 255, others => 64);
-   Raw : HAL.UInt16 := 0; -- adc instruction
+   Raw : HAL.UInt16 := 0; 
 
 begin
    --  Initialize LCD
@@ -30,7 +30,7 @@ begin
    loop
       LCD_Std_Out.Clear_Screen;
       LCD_Std_Out.Put_Line (" Main adc own libraries");
-      STM32F7_Disco.ADC.Start_Conversion_ADC_1_Channel_6; -- adc instruction
+      STM32F7_Disco.ADC.Start_Conversion_ADC_1_Channel_6; 
       Raw := STM32F7_Disco.ADC.Get_Value_ADC_1_Channel_6;
       LCD_Std_Out.Put_Line (Raw'Image);
 
