@@ -200,11 +200,17 @@ package body Onboard_System_Package is
       end loop;
       --  Get Distance To Objects on the Left
       Left_Distance := Get_Distance;
-      if (Left_Distance < 800) then
+      if (Left_Distance < 600) then
+         --  very far
+         Aux_Message (1) := '4';
+      elsif Left_Distance >= 601 and Left_Distance < 800 then
+         --  far
          Aux_Message (1) := '1';
-      elsif Left_Distance > 801 and Left_Distance < 1250 then
+      elsif Left_Distance >= 801 and Left_Distance < 1250 then
+         --  near
          Aux_Message (1) := '2';
       else
+         --very near
          Aux_Message (1) := '3';
       end if;
       --  fill the part of the message
@@ -219,12 +225,18 @@ package body Onboard_System_Package is
          delay until Ada.Real_Time.Clock + To_Time_Span (0.018_8);
       end loop;
       Right_Distance := Get_Distance;
-      if (Right_Distance < 800) then
-         Aux_Message (16) := '1';
-      elsif Right_Distance > 801 and Right_Distance < 1250 then
-         Aux_Message (16) := '2';
+      if (Right_Distance < 600) then
+         --  very far
+         Aux_Message (1) := '4';
+      elsif Right_Distance >= 601 and Right_Distance < 800 then
+         --  far
+         Aux_Message (1) := '1';
+      elsif Right_Distance >= 801 and Right_Distance < 1250 then
+         --  near
+         Aux_Message (1) := '2';
       else
-         Aux_Message (16) := '3';
+         --very near
+         Aux_Message (1) := '3';
       end if;
       --  fill the part of the message
       for I in 17 .. 30 loop

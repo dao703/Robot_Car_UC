@@ -15,6 +15,6 @@ package Remote_Control_Car_Tasks is
      Priority => System.Default_Priority - 5;
 
    task  Orientation_Task with
-     Priority => System.Default_Priority - 15;
+     Priority => System.Default_Priority - 10;
 
 end Remote_Control_Car_Tasks;
